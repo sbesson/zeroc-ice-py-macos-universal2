@@ -1,0 +1,6 @@
+[submodule "zeroc-ice-feedstock"]
+	path = zeroc-ice-feedstock
+	url = https://github.com/conda-forge/zeroc-ice-feedstock.git
+[submodule "patches"]
+	path = patches
+	url = https://github.com/glencoesoftware/zeroc-ice-py-patches.git
