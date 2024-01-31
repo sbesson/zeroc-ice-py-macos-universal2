@@ -9,7 +9,7 @@ jobs:
   build:
     strategy:
       matrix:
-        python-version: ['3.10', '3.11']
+        python-version: ['3.10', '3.11', '3.12']
     runs-on: macos-14
     steps:
       - name: Checkout repository and submodules
@@ -22,7 +22,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Prepare build environment
         run: |
-          pip install wheel>=0.40.0 twine numpy
+          pip install wheel>=0.40.0 twine numpy setuptools
       - name: Build wheel
         run: |
           curl -J -O -L 'https://pypi.io/packages/source/z/zeroc-ice/zeroc-ice-3.6.5.tar.gz'
