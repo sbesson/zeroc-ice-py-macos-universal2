@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.10', '3.11']
-    runs-on: macos-13-xlarge
+    runs-on: macos-14
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v4
