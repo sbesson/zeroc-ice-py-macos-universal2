@@ -38,9 +38,9 @@ jobs:
           python setup.py build -j 6
           python setup.py bdist_wheel
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: artifacts
+          name: artifacts-${{ matrix.python-version }}
           path: zeroc-ice-3.6.5/dist/*.whl
           if-no-files-found: error
   release:
@@ -49,11 +49,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts from build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       - name: List artifacts
         run: ls -R
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            artifacts/*.whl
+            artifacts-*/*.whl
