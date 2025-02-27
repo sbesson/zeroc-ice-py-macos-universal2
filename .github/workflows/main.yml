@@ -9,7 +9,7 @@ jobs:
   build:
     strategy:
       matrix:
-        python-version: ['3.10', '3.11', '3.12']
+        python-version: ['3.10', '3.11', '3.12', '3.13']
     runs-on: macos-14
     steps:
       - name: Checkout repository and submodules
